@@ -5,11 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-        <link href="https://rayyarr.github.io/popup/dist/lity.css" rel="stylesheet">
-        <script src="https://rayyarr.github.io/popup/vendor/jquery.js"></script>
-        <script src="https://rayyarr.github.io/popup/dist/lity2.js"></script>
-        <script>$(document).on('click', '[data-lightbox]', lity);</script>
-        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link rel="stylesheet" href="/style.css">
       
         <title>Presensi Guru</title>
         <meta name="description" content="Presensi Guru berbasis Web">
@@ -51,17 +48,17 @@
                     </div>
                     <div class="action">
                         <div class="link">
-                            <a class="button" href="#Tentang">Masuk</a>
-                            <a class="button ln" href="#Tentang">Daftar</a>
+                            <a class="button" onClick="tombolMasuk();">Masuk</a>
+                            <a class="button ln" onClick="tombolMasuk();">Daftar</a>
                         </div>
                         <div class="flexIn baseline">
-                            <div><a class="extL" href="#">Selengkapnya</a></div>
+                            <div><a class="extL" href="#Tentang">Selengkapnya</a></div>
                         </div>
                     </div>
                 </div>
     
                 <div class="homeR">
-                    <img alt="Pics" src="https://presensi.feeldream.repl.co/pic1.png">
+                    <img alt="Pics" src="https://presensi.feeldream.repl.co/pic4.png">
                     <img alt="Pics" src="https://presensi.feeldream.repl.co/pic2.png">
                     <img alt="Pics" src="https://presensi.feeldream.repl.co/pic3.png">
                 </div>
@@ -241,6 +238,27 @@
 
     <!--===== MAIN JS =====-->
     <script src="main.js"></script>
+
+    <style>
+        .swal2-title{font-size: 1.5rem;}
+    </style>
+    <script>
+        function tombolMasuk(){
+            Swal.fire({
+  title: 'Ingin Masuk Sebagai Guru Apa?',
+  showDenyButton: true,
+  showCancelButton: false,
+  confirmButtonText: 'SMP',
+  denyButtonText: `SMA`,
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire('OK!', '', 'success')
+  } else if (result.isDenied) {
+    Swal.fire('OK', '', 'success')
+  }
+})
+        }
+    </script>
 </body>
 </html>
 </html>
