@@ -274,7 +274,7 @@
   }
 })*/
 
-window.location = "http://localhost/presensi/index.php";
+window.location = "http://localhost/absenguru/index";
         }
     </script>
 </body>
